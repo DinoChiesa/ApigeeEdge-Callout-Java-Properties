@@ -1,0 +1,6 @@
+<JavaCallout name='JavaCallout-Props'>
+  <Properties>
+  </Properties>
+  <ClassName>com.dinochiesa.edgecallouts.JavaPropsCallout</ClassName>
+  <ResourceURL>java://edge-callout-javaprops.jar</ResourceURL>
+</JavaCallout>

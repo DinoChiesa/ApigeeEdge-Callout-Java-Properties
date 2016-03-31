@@ -1,0 +1,21 @@
+<RaiseFault name='RaiseFault-UnknownRequest'>
+  <DisplayName>RaiseFault-UnknownRequest</DisplayName>
+  <Description>Unknown Request</Description>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <FaultResponse>
+    <Set>
+      <Payload contentType='application/json'
+               variablePrefix='%' variableSuffix='#'><![CDATA[{
+  "error" : "that request was unknown - please try another",
+  "message" : "try a different request.",
+  "suggestions" : [
+    "GET /props",
+    "GET /3rdpartyjars"
+  ]
+}
+]]></Payload>
+      <StatusCode>404</StatusCode>
+      <ReasonPhrase>Not Found</ReasonPhrase>
+    </Set>
+  </FaultResponse>
+</RaiseFault>

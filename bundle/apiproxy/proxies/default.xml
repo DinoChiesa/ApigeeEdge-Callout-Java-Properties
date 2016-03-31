@@ -1,0 +1,56 @@
+<ProxyEndpoint name='default'>
+  <Description>Default Proxy</Description>
+  <HTTPProxyConnection>
+    <BasePath>/java-props</BasePath>
+    <Properties/>
+    <VirtualHost>default</VirtualHost>
+    <VirtualHost>secure</VirtualHost>
+  </HTTPProxyConnection>
+
+  <FaultRules/>
+
+  <PreFlow name="PreFlow">
+      <Request/>
+      <Response/>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+      <Request/>
+      <Response>
+        <Step><Name>AssignMessage-CleanResponse</Name></Step>
+      </Response>
+  </PostFlow>
+
+  <Flows>
+    <Flow name='get java props'>
+      <Description>get the Java properties</Description>
+      <Request>
+      </Request>
+      <Response>
+        <Step><Name>JavaCallout-Props</Name></Step>
+      </Response>
+      <Condition>(proxy.pathsuffix ~~ "/props/?") and (request.verb = "GET")</Condition>
+    </Flow>
+
+    <Flow name='get 3rdparty jars'>
+      <Description>get the third party jars available to callouts</Description>
+      <Request>
+      </Request>
+      <Response>
+        <Step><Name>JavaCallout-Thirdparty</Name></Step>
+      </Response>
+      <Condition>(proxy.pathsuffix ~~ "/(3|thi)rdparty(jars|libs)?") and (request.verb = "GET")</Condition>
+    </Flow>
+
+    <Flow name='unknown request'>
+      <Request>
+        <Step><Name>RaiseFault-UnknownRequest</Name></Step>
+      </Request>
+      <Response/>
+    </Flow>
+
+  </Flows>
+
+  <!-- keep this if no target (eg, for oauth token generation and refresh) -->
+  <RouteRule name='NoRouteRule'/>
+
+</ProxyEndpoint>

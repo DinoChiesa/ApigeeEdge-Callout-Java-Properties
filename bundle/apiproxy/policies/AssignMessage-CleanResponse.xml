@@ -1,0 +1,13 @@
+<AssignMessage name='AssignMessage-CleanResponse'>
+  <DisplayName>AssignMessage-CleanResponse</DisplayName>
+  <Remove>
+    <Headers>
+      <Header name='user-agent'/>
+      <Header name='Accept'/>
+      <Header name='x-forwarded-for'/>
+      <Header name='x-forwarded-port'/>
+      <Header name='x-forwarded-proto'/>
+      <Header name='X-Apigee.router.host'/>
+    </Headers>
+  </Remove>
+</AssignMessage>

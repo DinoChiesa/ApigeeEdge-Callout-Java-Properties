@@ -32,7 +32,7 @@ works with Apigee Edge. It does two things:
       <ResourceURL>java://edge-callout-javaprops.jar</ResourceURL>
     </JavaCallout>
    ```
-   If you are using the sample proxy, you don't need to do this; it's already present in the proxy. 
+   If you are using [the sample proxy](../bundle) included here, you don't need to do this; it's already present in the proxy. 
    
 6. Import and deploy the API proxy bundle into your Edge organization with a tool like [pushapi](https://github.com/carloseberhardt/apiploy) or [apigeetool](https://github.com/apigee/apigeetool-node).
 

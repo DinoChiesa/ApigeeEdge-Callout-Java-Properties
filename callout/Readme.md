@@ -10,7 +10,7 @@ works with Apigee Edge. It does two things:
 1. unpack (if you can read this, you've already done that).
 
 2. Before building the first time, you must import the apigee jars into your local Maven cache.
-   Do this with the following:
+   Do this with the [buildsetup.sh](buildsetup.sh) script:
    ```
    buildsetup.sh
    ```

@@ -2,7 +2,8 @@
 
 This API Proxy returns information about the JVM running the Message
 Processors. It's possibly useful for diagnostic purposes. It can be used
-on private cloud or public cloud instances of Edge. 
+on private cloud or public cloud instances of Edge.  It relies on [the custom Java policy](../callout) included here.
+
 
 ## Example usage
 

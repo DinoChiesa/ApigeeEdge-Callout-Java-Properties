@@ -5,7 +5,7 @@ works with Apigee Edge. It does two things:
 * collects Java System and OS properties and formats them into the message payload
 * interrogates and lists the 3rd party Jars available at runtime in Apigee Edge
 
-## Usage:
+## Building
 
 1. unpack (if you can read this, you've already done that).
 
@@ -17,12 +17,21 @@ works with Apigee Edge. It does two things:
 
 3. ```mvn clean package```
 
-4. copy target/edge-callout-javaprops.jar to your apiproxy/resources/java directory
+
+Congratulations! You have built the Jar.
+
+
+## Using this Custom Policy in a bundle
+
+If you are using [the sample proxy](../bundle) included here, you don't need to do the first two steps; the sample already has the custom policy JAR present in the proxy. 
+
+
+1. copy target/edge-callout-javaprops.jar to your apiproxy/resources/java directory
    also copy all the lib/*.jar files to the same directory.
    This pom file copies the appropriate jar to the resources/java directory for
    the sample proxy included here. 
 
-5. Be sure to include a Java callout policy in your
+2. Be sure to include a Java callout policy in your
    apiproxy/resources/policies directory. It should look like
    this:
     ```xml
@@ -32,11 +41,11 @@ works with Apigee Edge. It does two things:
       <ResourceURL>java://edge-callout-javaprops.jar</ResourceURL>
     </JavaCallout>
    ```
-   If you are using [the sample proxy](../bundle) included here, you don't need to do this; it's already present in the proxy. 
    
-6. Import and deploy the API proxy bundle into your Edge organization with a tool like [pushapi](https://github.com/carloseberhardt/apiploy) or [apigeetool](https://github.com/apigee/apigeetool-node).
+3. Import and deploy the API proxy bundle into your Edge organization with a tool like [pushapi](https://github.com/carloseberhardt/apiploy) or [apigeetool](https://github.com/apigee/apigeetool-node).
 
-7. invoke the API proxy.
+4. invoke the API proxy.
+
 
 
 ## Dependencies

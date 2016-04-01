@@ -22,7 +22,7 @@ import java.util.Enumeration;
 public class JavaPropsCallout implements Execution {
     private final static String varprefix = "java_";
     private Map properties; // read-only
-    private ObjectMapper om = new ObjectMapper();
+    private final static ObjectMapper om = new ObjectMapper();
 
     public JavaPropsCallout (Map properties) { this.properties = properties; }
 

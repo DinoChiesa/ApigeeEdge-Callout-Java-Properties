@@ -34,7 +34,7 @@ import com.google.common.base.Function;
 public class JavaThirdpartyCallout implements Execution {
     private final static String varprefix = "java_";
     private Map properties; // read-only
-    private ObjectMapper om = new ObjectMapper();
+    private final static ObjectMapper om = new ObjectMapper();
 
     public JavaThirdpartyCallout (Map properties) { this.properties = properties; }
 
